@@ -18,12 +18,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create and set the window to be the same size as the screen
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
+        
         // Create an instance of the main view controller
-        let mainController = UIViewController()
-        mainController.view.backgroundColor = .green
+        let mainViewController = HabitsTableViewController.instantiate()
+        let navigationController = UINavigationController(rootViewController: mainViewController)
 
         // Tell the window to load the main controller as it's root view
-        window?.rootViewController = mainController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
     }
