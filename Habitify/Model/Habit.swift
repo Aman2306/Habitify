@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Habit {
+struct Habit: Codable {
 
     var title: String
     let dateCreated: Date = Date()
@@ -30,7 +30,7 @@ struct Habit {
     }
     
     
-    enum Images: Int, CaseIterable {
+    enum Images: Int, Codable, CaseIterable {
 //        CaseIterable -> helps us by giving us a class property that returns all the cases in the enum, i.e. returns an array
         case book
         case bulb
